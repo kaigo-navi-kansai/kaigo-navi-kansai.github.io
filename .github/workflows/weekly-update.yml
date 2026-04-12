@@ -1,9 +1,8 @@
-name: Weekly content update
+name: Content update (manual)
 
+# ローカル launchd(weekly_post.py)を主経路にしたため、schedule は停止。
+# バックアップ/代替手段として手動実行のみ可能。
 on:
-  schedule:
-    # 毎週月曜 09:00 JST = 日曜 00:00 UTC
-    - cron: "0 0 * * 1"
   workflow_dispatch: {}
 
 permissions:

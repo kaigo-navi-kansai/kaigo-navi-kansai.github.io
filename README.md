@@ -58,7 +58,63 @@ python generate_training.py
 python build_article_pages.py
 ```
 
-## GitHub Actions の設定
+## 週次自動投稿(ローカル launchd)
+
+メインの週次自動投稿は、macOS の launchd で実行する `scripts/weekly_post.py` です。
+Mac が起動している環境で、毎週月曜 09:00 JST に1記事を自動生成・公開します。
+
+### 週替わりテーマ
+| 週 | テーマ | カテゴリ |
+|---|---|---|
+| 第1週(1〜7日) | 補助金・助成金 | `subsidy` |
+| 第2週(8〜14日) | AI・ICT活用 | `ai-tips` |
+| 第3週(15〜21日) | 職員研修 | `training` |
+| 第4週(22〜末日) | 介護経営tips | `management` |
+
+### セットアップ
+
+```bash
+cd /Users/gotoushinya/claudecodecli/kaigo-navi-kansai
+pip3 install --user -r scripts/requirements.txt
+cp .env.example .env  # ANTHROPIC_API_KEY を設定
+bash launchd/install_launchd.sh
+```
+
+インストール後は毎週月曜 09:00 に自動実行されます。
+
+### 手動テスト実行
+```bash
+# ドライラン(git push なし、記事生成のみ)
+python3 scripts/weekly_post.py --dry-run
+
+# テーマを指定して即時生成
+python3 scripts/weekly_post.py --theme subsidy
+
+# launchd 経由で即時実行(本番相当)
+launchctl start com.kaigo-navi.weekly
+
+# ログ
+tail -f ~/logs/kaigo-navi.log
+```
+
+### 停止 / アンインストール
+```bash
+bash launchd/uninstall_launchd.sh
+```
+
+### 処理概要
+1. 週番号でテーマを選定
+2. カイポケコラムから構造パターンを参照(タイトル・見出しのみ、本文は転載しない)
+3. `subsidy` 週は府県庁HPも巡回(`scrape_subsidies.py` 呼び出し)
+4. Claude API にカイポケ風コラムHTMLを生成させる
+5. `articles/` に個別HTML書き出し、`articles.json` 先頭に追加
+6. `git add/commit/push` で公開
+
+## GitHub Actions の設定(バックアップ用)
+
+メイン自動投稿はローカル launchd に一本化しました。GH Actions は `workflow_dispatch`(手動実行)でのバックアップ経路として残しています。
+
+
 
 リポジトリの Settings → Secrets and variables → Actions で以下を登録:
 
