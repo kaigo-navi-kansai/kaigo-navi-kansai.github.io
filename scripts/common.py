@@ -149,10 +149,21 @@ def call_claude_json(
     max_tokens: int = 4000,
     temperature: float = 0.3,
 ) -> Any:
-    """Claude 応答を JSON として解釈して返す。```json``` フェンスは除去。"""
-    text = call_claude(system, user, model=model, max_tokens=max_tokens, temperature=temperature)
-    text = text.strip()
-    m = re.search(r"```(?:json)?\s*(.*?)\s*```", text, re.DOTALL)
+    """Claude 応答を JSON として解釈して返す。コードフェンスと前置文を除去。"""
+    raw = call_claude(system, user, model=model, max_tokens=max_tokens, temperature=temperature)
+    text = raw.strip()
+    # 1. ```json ... ``` フェンス除去
+    m = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
     if m:
         text = m.group(1)
-    return json.loads(text)
+    else:
+        # 2. 先頭のmarkdown/説明文を飛ばし最外 { ... } を抽出
+        start = text.find("{")
+        end = text.rfind("}")
+        if start >= 0 and end > start:
+            text = text[start : end + 1]
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        preview = raw[:800] + ("...<truncated>" if len(raw) > 800 else "")
+        raise ValueError(f"JSONパース失敗: {e}\n---応答プレビュー(先頭800字)---\n{preview}")

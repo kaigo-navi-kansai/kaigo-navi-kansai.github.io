@@ -252,7 +252,7 @@ def run(args: argparse.Namespace) -> int:
 
     logging.info("Claude 呼び出し中…")
     try:
-        result = call_claude_json(SYSTEM_PROMPT, user_prompt, max_tokens=5500, temperature=0.5)
+        result = call_claude_json(SYSTEM_PROMPT, user_prompt, max_tokens=8000, temperature=0.5)
     except Exception as e:
         logging.error(f"Claude 呼び出し失敗: {e}")
         return 1
