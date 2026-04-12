@@ -1,7 +1,22 @@
 {
   "version": "1.0",
-  "updated": "2026-04-12T09:00:00+09:00",
+  "updated": "2026-04-12T18:00:00+09:00",
   "articles": [
+    {
+      "slug": "wage-increase-kansai-r7",
+      "title": "【令和7年度】介護分野の職員の賃上げ・職場環境改善支援事業｜関西6府県の申請手順を徹底比較",
+      "category": "subsidy",
+      "prefecture": null,
+      "excerpt": "令和7年度補正予算で措置された最大月額1.9万円相当の緊急賃上げ支援。関西6府県の申請方法・窓口・受付状況を一覧で比較します。",
+      "body_html": "",
+      "tags": ["賃上げ", "処遇改善", "令和7年度補正予算", "関西6府県"],
+      "published": "2026-04-12",
+      "source_url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/",
+      "image": "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=800&q=80",
+      "featured": true,
+      "popular": true,
+      "custom_html": true
+    },
     {
       "slug": "subsidy-osaka-robot-ict-2026",
       "title": "大阪府の介護ロボット・ICT導入支援｜申請前に押さえたい3つのポイント",

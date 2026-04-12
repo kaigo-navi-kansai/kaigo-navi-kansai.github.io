@@ -183,6 +183,9 @@ def main() -> int:
         slug = a.get("slug")
         if not slug:
             continue
+        if a.get("custom_html"):
+            # custom_html=true の記事は手書きHTMLを上書きしない
+            continue
         out = ARTICLES_HTML_DIR / f"{slug}.html"
         out.write_text(render_article(a), encoding="utf-8")
         written += 1
