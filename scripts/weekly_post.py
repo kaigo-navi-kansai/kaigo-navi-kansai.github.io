@@ -17,6 +17,7 @@ CLI:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import logging
 import os
 import random
@@ -236,7 +237,7 @@ def run(args: argparse.Namespace) -> int:
     if theme == "subsidy":
         subs = gather_subsidy_context()
         user_prompt = build_subsidy_user_prompt(subs, style_hint)
-        topic_key = f"subsidy-weekly-{today_iso_date()}"
+        topic_title = f"subsidy-weekly-{today_iso_date()}"
     else:
         if theme == "ai-tips":
             pool = AI_TOPICS
@@ -248,7 +249,6 @@ def run(args: argparse.Namespace) -> int:
         topic_title = pick_unused(pool, used)
         logging.info(f"選定トピック: {topic_title}")
         user_prompt = build_generic_user_prompt(theme, topic_title, style_hint)
-        topic_key = f"{theme}-{make_slug('', topic_title[:30])}-{today_iso_date()}"
 
     logging.info("Claude 呼び出し中…")
     try:
@@ -257,7 +257,10 @@ def run(args: argparse.Namespace) -> int:
         logging.error(f"Claude 呼び出し失敗: {e}")
         return 1
 
-    slug = unique_slug(articles, make_slug(theme, topic_key))
+    # slug: {category}-YYYY-MM-DD-{6桁hash} 形式(タイトル由来で衝突回避)
+    title_for_hash = (result.get("title") or topic_title).encode("utf-8")
+    hash_suffix = hashlib.sha1(title_for_hash).hexdigest()[:6]
+    slug = unique_slug(articles, f"{theme}-{today_iso_date()}-{hash_suffix}")
 
     article = {
         "slug": slug,
