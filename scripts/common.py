@@ -22,10 +22,15 @@ USER_AGENT = "kaigo-navi-kansai-bot/1.0 (+https://kaigo-navi-kansai.github.io/)"
 # --- env loading ------------------------------------------------------------
 
 def load_env() -> None:
-    """ローカル実行時は ../.env を読む。CI は既に環境変数設定済みのためスキップ。"""
+    """ローカル実行時は ../.env を読む。.env の値で環境変数を上書きする。
+
+    既にシェルで ANTHROPIC_API_KEY が export されていた場合、デフォルトの
+    load_dotenv ではシェル側が優先されてしまうため override=True で .env を
+    authoritative にする。CI は .env を置かない想定でスキップされる。
+    """
     env_path = ROOT / ".env"
     if env_path.exists():
-        load_dotenv(env_path)
+        load_dotenv(env_path, override=True)
 
 
 # --- JSON I/O ---------------------------------------------------------------
