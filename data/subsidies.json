@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "updated": null,
+  "sources": {
+    "osaka":    { "url": "https://www.pref.osaka.lg.jp/kaigoshienka/",                          "title": "大阪府 介護支援課",       "raw_text": "", "fetched": null },
+    "hyogo":    { "url": "https://web.pref.hyogo.lg.jp/kf17/index.html",                         "title": "兵庫県 高齢政策課",       "raw_text": "", "fetched": null },
+    "kyoto":    { "url": "https://www.pref.kyoto.jp/kaigo/",                                     "title": "京都府 介護・地域福祉課", "raw_text": "", "fetched": null },
+    "shiga":    { "url": "https://www.pref.shiga.lg.jp/ippan/kenkouiryoufukushi/kaigo/",         "title": "滋賀県 医療福祉推進課",   "raw_text": "", "fetched": null },
+    "nara":     { "url": "https://www.pref.nara.jp/dd_aspx_menuid-10622.htm",                    "title": "奈良県 介護保険課",       "raw_text": "", "fetched": null },
+    "wakayama": { "url": "https://www.pref.wakayama.lg.jp/prefg/041300/",                        "title": "和歌山県 長寿社会課",     "raw_text": "", "fetched": null },
+    "mhlw":     { "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/", "title": "厚生労働省 介護",      "raw_text": "", "fetched": null }
+  }
+}

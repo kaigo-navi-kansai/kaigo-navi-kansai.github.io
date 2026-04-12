@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金・助成金情報 | 関西介護ナビ</title>
+<meta name="description" content="関西6府県（大阪・兵庫・京都・滋賀・奈良・和歌山）の介護施設向け最新補助金・助成金情報。県庁公式情報を週次更新。">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo"><span class="logo-mark">関</span><span class="logo-text">関西介護ナビ</span></a>
+    <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav"><ul>
+      <li><a href="/pages/subsidy.html">補助金・助成金</a></li>
+      <li><a href="/pages/ai-tips.html">AI・ICT活用</a></li>
+      <li><a href="/pages/training.html">職員研修</a></li>
+      <li><a href="/pages/management.html">管理者tips</a></li>
+      <li class="has-dropdown"><a href="#">府県別 ▾</a><ul class="dropdown">
+        <li><a href="/pages/prefectures/osaka.html">大阪府</a></li>
+        <li><a href="/pages/prefectures/hyogo.html">兵庫県</a></li>
+        <li><a href="/pages/prefectures/kyoto.html">京都府</a></li>
+        <li><a href="/pages/prefectures/shiga.html">滋賀県</a></li>
+        <li><a href="/pages/prefectures/nara.html">奈良県</a></li>
+        <li><a href="/pages/prefectures/wakayama.html">和歌山県</a></li>
+      </ul></li>
+      <li><a href="/pages/contact.html">お問い合わせ</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">ホーム</a> › 補助金・助成金</div>
+    <h1>補助金・助成金情報</h1>
+    <p>関西6府県の介護施設向け補助金・助成金を集約。府県別に絞り込みできます。</p>
+  </div>
+</section>
+
+<main class="container main-layout">
+  <div class="main-content">
+    <div class="filter-bar">
+      <label for="filter-prefecture">府県:</label>
+      <select id="filter-prefecture">
+        <option value="">すべて</option>
+        <option value="osaka">大阪府</option>
+        <option value="hyogo">兵庫県</option>
+        <option value="kyoto">京都府</option>
+        <option value="shiga">滋賀県</option>
+        <option value="nara">奈良県</option>
+        <option value="wakayama">和歌山県</option>
+      </select>
+    </div>
+
+    <div class="article-grid" data-load="category" data-category="subsidy" id="article-list">
+      <p class="loading">読み込み中…</p>
+    </div>
+
+    <div class="ad-slot" data-slot="content-bottom"><span class="ad-label">広告</span></div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="ad-slot ad-slot-sidebar" data-slot="sidebar-top"><span class="ad-label">広告</span></div>
+    <div class="sidebar-box">
+      <h3>府県別</h3>
+      <ul>
+        <li><a href="prefectures/osaka.html">大阪府</a></li>
+        <li><a href="prefectures/hyogo.html">兵庫県</a></li>
+        <li><a href="prefectures/kyoto.html">京都府</a></li>
+        <li><a href="prefectures/shiga.html">滋賀県</a></li>
+        <li><a href="prefectures/nara.html">奈良県</a></li>
+        <li><a href="prefectures/wakayama.html">和歌山県</a></li>
+      </ul>
+    </div>
+    <div class="ad-slot ad-slot-sidebar" data-slot="sidebar-bottom"><span class="ad-label">広告</span></div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><span class="logo-mark">関</span><span class="logo-text">関西介護ナビ</span></div>
+      <p>関西圏介護施設管理者向け情報サイト</p>
+    </div>
+    <div class="footer-nav"><h4>カテゴリ</h4><ul>
+      <li><a href="/pages/subsidy.html">補助金・助成金</a></li>
+      <li><a href="/pages/ai-tips.html">AI・ICT活用</a></li>
+      <li><a href="/pages/training.html">職員研修</a></li>
+      <li><a href="/pages/management.html">管理者tips</a></li>
+    </ul></div>
+    <div class="footer-nav"><h4>府県別</h4><ul>
+      <li><a href="/pages/prefectures/osaka.html">大阪府</a></li>
+      <li><a href="/pages/prefectures/hyogo.html">兵庫県</a></li>
+      <li><a href="/pages/prefectures/kyoto.html">京都府</a></li>
+      <li><a href="/pages/prefectures/shiga.html">滋賀県</a></li>
+      <li><a href="/pages/prefectures/nara.html">奈良県</a></li>
+      <li><a href="/pages/prefectures/wakayama.html">和歌山県</a></li>
+    </ul></div>
+    <div class="footer-nav"><h4>サイト情報</h4><ul>
+      <li><a href="/pages/contact.html">お問い合わせ</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-copy"><div class="container"><small>© <span id="year"></span> 関西介護ナビ. All rights reserved.</small></div></div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/articles-loader.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var sel = document.getElementById('filter-prefecture');
+  if (!sel) return;
+  sel.addEventListener('change', function(){
+    var v = sel.value;
+    fetch('../data/articles.json', {cache:'no-cache'}).then(r=>r.json()).then(function(data){
+      var list = (data.articles||[]).filter(a => a.category === 'subsidy' && (!v || a.prefecture === v));
+      list.sort((a,b)=>(b.published||'').localeCompare(a.published||''));
+      var container = document.getElementById('article-list');
+      if (!list.length){ container.innerHTML = '<p class="empty">該当記事はまだありません。</p>'; return; }
+      var html = list.map(function(a){
+        var prefNames = {osaka:'大阪府',hyogo:'兵庫県',kyoto:'京都府',shiga:'滋賀県',nara:'奈良県',wakayama:'和歌山県'};
+        return '<article class="article-card"><a href="../articles/'+a.slug+'.html" class="thumb">'+(a.image?'<img src="'+a.image+'" alt="" loading="lazy">':(a.title||'').charAt(0))+'</a>'
+        +'<div class="body"><span class="cat cat-subsidy">補助金・助成金</span>'
+        +'<h3><a href="../articles/'+a.slug+'.html">'+a.title+'</a></h3>'
+        +'<p class="excerpt">'+(a.excerpt||'')+'</p>'
+        +'<div class="meta"><time>'+new Date(a.published).toLocaleDateString('ja-JP')+'</time>'
+        +(a.prefecture?'<span>'+(prefNames[a.prefecture]||'')+'</span>':'')
+        +'</div></div></article>';
+      }).join('');
+      container.innerHTML = html;
+    });
+  });
+});
+</script>
+</body>
+</html>

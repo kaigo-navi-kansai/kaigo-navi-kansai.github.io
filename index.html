@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>関西介護ナビ | 関西圏介護施設管理者向け情報サイト</title>
+<meta name="description" content="大阪・兵庫・京都・滋賀・奈良・和歌山の介護施設管理者向けに、補助金情報・AI活用・職員研修の最新情報をお届けします。">
+<meta name="keywords" content="介護施設,管理者,補助金,助成金,関西,大阪,兵庫,京都,滋賀,奈良,和歌山,AI,ICT,職員研修">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">関</span>
+      <span class="logo-text">関西介護ナビ</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/pages/subsidy.html">補助金・助成金</a></li>
+        <li><a href="/pages/ai-tips.html">AI・ICT活用</a></li>
+        <li><a href="/pages/training.html">職員研修</a></li>
+        <li><a href="/pages/management.html">管理者tips</a></li>
+        <li class="has-dropdown">
+          <a href="#">府県別 ▾</a>
+          <ul class="dropdown">
+            <li><a href="/pages/prefectures/osaka.html">大阪府</a></li>
+            <li><a href="/pages/prefectures/hyogo.html">兵庫県</a></li>
+            <li><a href="/pages/prefectures/kyoto.html">京都府</a></li>
+            <li><a href="/pages/prefectures/shiga.html">滋賀県</a></li>
+            <li><a href="/pages/prefectures/nara.html">奈良県</a></li>
+            <li><a href="/pages/prefectures/wakayama.html">和歌山県</a></li>
+          </ul>
+        </li>
+        <li><a href="/pages/contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>関西の介護施設管理者に、<br>確かな情報を。</h1>
+      <p>補助金・AI活用・職員研修まで、現場運営に役立つ最新情報を週次更新でお届けします。</p>
+      <div class="hero-cta">
+        <a href="/pages/subsidy.html" class="btn btn-primary">補助金を探す</a>
+        <a href="/pages/ai-tips.html" class="btn btn-outline">AI活用を見る</a>
+      </div>
+    </div>
+    <div class="hero-image" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="">
+    </div>
+  </div>
+</section>
+
+<main class="container main-layout">
+  <div class="main-content">
+
+    <section class="section">
+      <div class="section-header">
+        <h2>新着記事</h2>
+        <a href="#" class="section-link">すべて見る →</a>
+      </div>
+      <div class="article-grid" id="latest-articles" data-load="latest" data-limit="6">
+        <p class="loading">読み込み中…</p>
+      </div>
+    </section>
+
+    <div class="ad-slot" data-slot="content-middle">
+      <span class="ad-label">広告</span>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>注目記事</h2>
+      </div>
+      <div class="article-grid" id="featured-articles" data-load="featured" data-limit="3">
+        <p class="loading">読み込み中…</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>カテゴリから探す</h2>
+      </div>
+      <div class="category-grid">
+        <a href="/pages/subsidy.html" class="category-card cat-subsidy">
+          <div class="category-icon">¥</div>
+          <h3>補助金・助成金</h3>
+          <p>関西6府県の最新補助金情報</p>
+        </a>
+        <a href="/pages/ai-tips.html" class="category-card cat-ai">
+          <div class="category-icon">AI</div>
+          <h3>AI・ICT活用</h3>
+          <p>ChatGPT・ICTで業務効率化</p>
+        </a>
+        <a href="/pages/training.html" class="category-card cat-training">
+          <div class="category-icon">研</div>
+          <h3>職員研修</h3>
+          <p>離職防止と質向上の実践</p>
+        </a>
+        <a href="/pages/management.html" class="category-card cat-management">
+          <div class="category-icon">管</div>
+          <h3>管理者tips</h3>
+          <p>施設運営の最新ノウハウ</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>府県別情報</h2>
+      </div>
+      <div class="pref-grid">
+        <a href="/pages/prefectures/osaka.html" class="pref-card">大阪府</a>
+        <a href="/pages/prefectures/hyogo.html" class="pref-card">兵庫県</a>
+        <a href="/pages/prefectures/kyoto.html" class="pref-card">京都府</a>
+        <a href="/pages/prefectures/shiga.html" class="pref-card">滋賀県</a>
+        <a href="/pages/prefectures/nara.html" class="pref-card">奈良県</a>
+        <a href="/pages/prefectures/wakayama.html" class="pref-card">和歌山県</a>
+      </div>
+    </section>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="ad-slot ad-slot-sidebar" data-slot="sidebar-top">
+      <span class="ad-label">広告</span>
+    </div>
+    <div class="sidebar-box">
+      <h3>人気記事</h3>
+      <ol id="popular-articles" data-load="popular" data-limit="5">
+        <li class="loading">読み込み中…</li>
+      </ol>
+    </div>
+    <div class="ad-slot ad-slot-sidebar" data-slot="sidebar-bottom">
+      <span class="ad-label">広告</span>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-mark">関</span>
+        <span class="logo-text">関西介護ナビ</span>
+      </div>
+      <p>関西圏介護施設管理者向け情報サイト</p>
+    </div>
+    <div class="footer-nav">
+      <h4>カテゴリ</h4>
+      <ul>
+        <li><a href="/pages/subsidy.html">補助金・助成金</a></li>
+        <li><a href="/pages/ai-tips.html">AI・ICT活用</a></li>
+        <li><a href="/pages/training.html">職員研修</a></li>
+        <li><a href="/pages/management.html">管理者tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>府県別</h4>
+      <ul>
+        <li><a href="/pages/prefectures/osaka.html">大阪府</a></li>
+        <li><a href="/pages/prefectures/hyogo.html">兵庫県</a></li>
+        <li><a href="/pages/prefectures/kyoto.html">京都府</a></li>
+        <li><a href="/pages/prefectures/shiga.html">滋賀県</a></li>
+        <li><a href="/pages/prefectures/nara.html">奈良県</a></li>
+        <li><a href="/pages/prefectures/wakayama.html">和歌山県</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>サイト情報</h4>
+      <ul>
+        <li><a href="/pages/contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <div class="container">
+      <small>© <span id="year"></span> 関西介護ナビ. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/articles-loader.js"></script>
+</body>
+</html>
